@@ -6,13 +6,18 @@ display: flexbox;
 body {
   background-color: dimgray;
 }
-#highScore {
+#scoreBox {
+  /* background-color: cadetblue; */
+  border: 3px solid black;
+  padding: 15px;
+
 text-emphasis: strong;
 }
 
 header {
-display: flexbox;
-align-items: center;
+display: inline-block;
+color: burlywood;
+font-size: x-large;
 }
 
 div.qBlock {
@@ -20,13 +25,17 @@ div.qBlock {
   border: 4px solid black;
   border-radius: 10px;
   box-sizing: content-box;
+  padding: 10px;
+  margin: 20;
+
 }
 
 #timer {
+  place-content: ;
   background-color: darkolivegreen;
 }
 #Question {
-
+  
   background-color: burlywood;
 
 }
@@ -38,14 +47,16 @@ button {
   padding: 15px 32px;
   margin: 10px;
 }
-
-.ansList {
-display: flexbox;
-flex-direction: column;
+#startQuiz {
+background-color: darkseagreen;
 }
-.answer {
-  display: block;
-  display: inline;
+.ansList {
+  display: inline-block;
+/* flex-direction: column; */
+}
+#answer {
+  /* display: inline-block;
+   */
 flex-direction: column;
   block-size: max-content;
   flex-direction: column;
