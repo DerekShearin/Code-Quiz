@@ -1,17 +1,23 @@
 // Done:Press 'start' button to start timer with 30 seconds and display first question
 //Done:display the question in a text box
 //Done:display the answers in unordered list
-//Done:select answer on click of mouse button 
+//Done:select answer on click of mouse button
+//To DO:
+//advance to next question 
 //add 5 seconds if the answer is right 
 //deduct 5 seconds if answer is incorrect
-//record high score and display with player's initials
 //total seconds left = score
+//record high score and display with player's initials
+//
+
+ // if (this.textContent=rightAnswer);
  
 
 
 
 var count = 0
-var time = 29
+var time = 5
+var player = (playerInit)
 // var highScore = ()
 
 document.getElementById("startQuiz").addEventListener("click", startQuiz)
@@ -23,7 +29,7 @@ const quizQuestion = [
     answers: {
       a: "Dan Quayle",
       b: "Steve Jobs",
-      c: "Brandon Frasier",
+      c: "Brendan Fraser",
       d: "Brendan Eich",
     },
     rightAnswer: "d"
@@ -130,40 +136,30 @@ const quizQuestion = [
    
 ];
 
-for (var i =0; i<quizQuestion.length;i++){
-   document.getElementById("question").textContent=quizQuestion[i].question
-}
-
-
 function startQuiz (i) {
-  document.getElementById("question").textContent=quizQuestion[count].question
-  document.getElementById("a").textContent=quizQuestion[0].answers.a
-  document.getElementById("b").textContent=quizQuestion[0].answers.b
-  document.getElementById("c").textContent=quizQuestion[0].answers.c
-  document.getElementById("d").textContent=quizQuestion[0].answers.d
+  document.getElementById("question").textContent=quizQuestion[i].question;
+  document.getElementById("a").textContent=quizQuestion[i].answers.a
+  document.getElementById("b").textContent=quizQuestion[i].answers.b
+  document.getElementById("c").textContent=quizQuestion[i].answers.c
+  document.getElementById("d").textContent=quizQuestion[i].answers.d
   
-  for (let index = quizQuestion; index <quizQuestion.length; index++) {
-    const element = quizQuestion[index];
+  for (let count = quizQuestion; count <quizQuestion.length; count++) {
+    const element = quizQuestion[count];
   }
 
   // function endGame 
-  setInterval(() => {
+  var timer = setInterval(() => {
     document.getElementById('timer').textContent=time
     time-- 
     if (time == 0 ){ 
-      setTimeout(window.alert("Game Over!"))
-      window.prompt("type your initials"); 
+      clearInterval (timer);
+      (window.alert("Game Over!"), time == 0)
+      window.prompt("type your initials")
+      document.getElementById(playerInit).textContent=player[pl]; 
     }  
   }, 1000);
-} 
-
-function userClick (rightAnswer)
-{
-  // if (this.textContent=rightAnswer);
-  // console.log(this.textContent)
+  for (var i =0; i<quizQuestion.length;i++){
+    document.getElementById("question").textContent=quizQuestion[i].question
+  // function userClick (rightAnswer)
+};
 }
-// document.getElementById("a").addEventListener("click", userClick);
-// document.getElementById("b").addEventListener("click", userClick);
-// document.getElementById("c").addEventListener("click", userClick);
-// document.getElementById("d").addEventListener("click", userClick);
-
